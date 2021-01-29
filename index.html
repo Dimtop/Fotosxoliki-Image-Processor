@@ -1,0 +1,27 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<script>
+    
+    var canvas=document.getElementById("myCanvas");
+    var ctx1=canvas.getContext("2d");
+    /// draw the shape we want to use for clipping
+ctx1.drawImage(imgClip, 0, 0);
+
+/// change composite mode to use that shape
+ctx1.globalCompositeOperation = 'source-in';
+
+/// draw the image to be clipped
+ctx1.drawImage(img, 0, 0);
+</script>
+</head>
+<body>
+    <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
+    </canvas>
+
+</body>
+</html>
